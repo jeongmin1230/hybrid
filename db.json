@@ -1,0 +1,10 @@
+{
+    "post": [
+      { "id": "abcd", "title": "첫 번째 글 제목", "body": "첫 번째 글 내용" },
+      { "id": "1234", "title": "두 번째 글 제목", "body": "두 번째 글 내용" }
+    ],
+    "comment": [
+      { "post-id": "abcd", "content": "댓글 1", "no": 1 },
+      { "post-id": "abcd", "content": "댓글 2", "no": 2 }
+    ]
+}
