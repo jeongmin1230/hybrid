@@ -1,10 +1,46 @@
 {
-    "post": [
-      { "id": "abcd", "title": "첫 번째 글 제목", "body": "첫 번째 글 내용" },
-      { "id": "1234", "title": "두 번째 글 제목", "body": "두 번째 글 내용" }
-    ],
-    "comment": [
-      { "post-id": "abcd", "content": "댓글 1", "no": 1 },
-      { "post-id": "abcd", "content": "댓글 2", "no": 2 }
-    ]
+  "users": [
+    {
+      "id": "jeongmin",
+      "pw": "wjdals!1",
+      "phone": "01086991406",
+      "name": "정민"
+    },
+    {
+      "id": "wjdals",
+      "name": "뎡민",
+      "password": "1",
+      "phone": "1"
+    }
+  ],
+  "notice": [
+    {
+      "id": "abcd",
+      "title": "첫 번째 글 제목",
+      "body": "첫 번째 글 내용",
+      "registrant": "정민",
+      "regis-date": "2024-10-15"
+    },
+    {
+      "id": "1234",
+      "title": "두 번째 글 제목",
+      "body": "두 번째 글 내용",
+      "registrant": "정민",
+      "regist-date": "2024-10-17"
+    }
+  ],
+  "comment": [
+    {
+      "post-id": "abcd",
+      "content": "댓글 1",
+      "no": 1,
+      "id": "1c22"
+    },
+    {
+      "post-id": "abcd",
+      "content": "댓글 2",
+      "no": 2,
+      "id": "a94b"
+    }
+  ]
 }

@@ -1,27 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #E2EDEB;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.page-content {
+  margin: 60px 0px 60px 0px;
+  padding: 40px;
+  background: white;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  flex-basis: 28%;
+  font-size: 1rem;
+}
+
+input[type="text"], input[type="password"] {
+  flex-grow: 1;
+  padding: 10px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-container {
+  text-align: center;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: darkgray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+input[type="submit"]:enabled {
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+input[type="submit"]:disabled {
+  background-color: darkgray;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.link-container {
+  text-align: center;
+}
+
+.link-container a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.link-container a:hover {
+  text-decoration: underline;
 }
