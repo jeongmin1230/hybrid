@@ -19,14 +19,14 @@
       "title": "첫 번째 글 제목",
       "body": "첫 번째 글 내용",
       "registrant": "정민",
-      "regis-date": "2024-10-15"
+      "date": "2024-10-15"
     },
     {
       "id": "1234",
       "title": "두 번째 글 제목",
       "body": "두 번째 글 내용",
       "registrant": "정민",
-      "regist-date": "2024-10-17"
+      "date": "2024-10-17"
     }
   ],
   "comment": [

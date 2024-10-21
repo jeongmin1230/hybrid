@@ -118,3 +118,16 @@ input:disabled {
 .hint-error {
   color: red;
 }
+
+.header {
+  padding: 4px;
+  margin: 0;
+  background: white;
+}
+
+.end-form {
+  font-size: 14px;
+  justify-content: end;
+  color: gray;
+  display: flex;
+}

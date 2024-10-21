@@ -107,7 +107,7 @@ export default function Signup() {
             <label htmlFor="name">이름</label>
             <input
               type="text"
-              name="name"
+              id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -117,7 +117,7 @@ export default function Signup() {
             <label htmlFor="id">아이디</label>
             <input
               type="text"
-              name="id"
+              id="id"
               value={id}
               onChange={(e) => setId(e.target.value)}
               disabled={isIdDisabled}
@@ -130,7 +130,7 @@ export default function Signup() {
             <div className='input-wrapper'>
               <input
               type="password"
-              name="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -145,7 +145,7 @@ export default function Signup() {
             <div className='input-wrapper'>
               <input
               type="password"
-              name="confirmPassword"
+              id="confirmPassword"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
@@ -159,7 +159,7 @@ export default function Signup() {
             <label htmlFor="phone">핸드폰번호</label>
             <input
               type="text"
-              name="phone"
+              id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required

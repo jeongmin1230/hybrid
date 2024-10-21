@@ -28,7 +28,7 @@ export default function LoginPage() {
             if (users.length > 0) {
               const user = users[0];
               localStorage.setItem('user', JSON.stringify({ name: user.name }));
-              router.push(`/main?name=${user.name}`);
+              router.push(`/main`);
               router.refresh();
             } else {
               alert("로그인 실패: 입력한 아이디 또는 비밀번호가 잘못되었습니다.");
@@ -44,7 +44,7 @@ export default function LoginPage() {
             <label htmlFor="id">아이디</label>
             <input
               type="text"
-              name="id"
+              id="id"
               value={id}
               onChange={(e) => setId(e.target.value)}
               required
@@ -54,7 +54,7 @@ export default function LoginPage() {
             <label htmlFor="password">비밀번호</label>
             <input
               type="password"
-              name="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
