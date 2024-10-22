@@ -8,6 +8,7 @@ export function NoticeList({id, title, date}) {
         <div>
             <Link href={`/read/${id}`}>{title}</Link>
             <h6 className='end-form'>{date}</h6>
+            <hr/>
         </div>
     );
 }

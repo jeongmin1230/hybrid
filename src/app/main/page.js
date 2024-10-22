@@ -27,11 +27,11 @@ export default function MainPage() {
     <div>
     <UserInfo />
     <br/>
-    <button onClick={() => moveTo('/notice_registration')}>공지사항 작성</button>
+    <button onClick={() => moveTo('../notice_registration')}>공지사항 작성</button>
     {noticeList.length > 0 ? (
         <ul>
           {noticeList.map((notice, _) => (
-              <NoticeList key = {notice.id} id = {notice.id} title={notice.title} date={notice.date}/>
+              <NoticeList key = {notice.id} id = {notice.id} title={notice.title} date={notice.date.split(" ")[0]}/>
               ))
           }
         </ul>
