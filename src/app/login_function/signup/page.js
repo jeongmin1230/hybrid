@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 export default function Signup() {
   const [name, setName] = useState('');
@@ -13,17 +14,18 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isMatch, setIsMatch] = useState('');
   const [phone, setPhone] = useState('');
+  const [selectedOption, setSelectedOption] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const passwordRegex = /^(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,20}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,20}$/;
     if(passwordRegex.test(password)) {
       setIsAppropriate('적절한 비밀번호 입니다.');
     } else if(password.trim() === "") {
       setIsAppropriate('비밀번호를 입력 해 주세요.');
     } else {
-      setIsAppropriate('8자~20자 사이의 소문자, 특수문자 조합의 비밀번호만 사용 가능합니다.');
+      setIsAppropriate('8자~20자 사이의 대문자, 소문자, 특수문자 조합의 비밀번호만 사용 가능합니다.');
     }
   }, [password])
 
@@ -44,12 +46,13 @@ export default function Signup() {
     confirmPassword.trim() !== "" &&
     phone.trim() !== "" &&
     isMatch === '처음 입력한 비밀번호와 일치합니다.' &&
+    selectedOption !== "" &&
     isIdDisabled) {
       setIsButtonDisabled(false);
     } else {
       setIsButtonDisabled(true);
     }
-  }, [name, id, isIdDisabled, password, confirmPassword, isMatch, phone]);
+  }, [name, id, isIdDisabled, password, confirmPassword, isMatch, phone, selectedOption]);
 
     const handleDuplicateCheck = (e) => {
     e.preventDefault();
@@ -79,6 +82,9 @@ export default function Signup() {
       })
     }
   };
+  const handleType = (e) => {
+    setSelectedOption(e.target.value);
+  };
 
     return (
     <div className='page-content'>
@@ -86,14 +92,15 @@ export default function Signup() {
         e.preventDefault();
         const name = e.target.name.value;
         const id = e.target.id.value;
-        const password = e.target.password.value;
+        const pw = e.target.password.value;
         const phone = e.target.phone.value;
-        const options = {
+        const type = e.target.type.value;
+        const korType = type === "manager" ? "관리자" : "사용자";        const options = {
           method: 'POST',
           headers: {
             'Content-Type' : 'application/json'
           },
-          body: JSON.stringify({name, id, password, phone})
+          body: JSON.stringify({name, id, pw, phone, type: korType})
         }
         fetch(`${process.env.NEXT_PUBLIC_API}users`, options)
         .then(res => res.json())
@@ -164,6 +171,19 @@ export default function Signup() {
               onChange={(e) => setPhone(e.target.value)}
               required
             />
+          </div>
+          <div className='input-container'>
+            <label htmlFor="type">유형</label>
+            <label style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+              <input id="type" type="radio" value="manager" checked={selectedOption === "manager"} onChange={handleType}/>
+              <p><Image src="/images/manager.png" alt='manageer icon' width={30} height={30}/></p>
+              <p>관리자</p>
+            </label>
+            <label style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+              <input id="type" type="radio" value="general" checked={selectedOption === "general"} onChange={handleType}/>
+              <p><Image src="/images/general.png" alt='general icon' width={30} height={30}/></p>
+              <p>일반인</p>
+            </label>
           </div>
           <div className="submit-container">
             <input
