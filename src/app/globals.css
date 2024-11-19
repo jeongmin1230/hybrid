@@ -34,6 +34,14 @@ legend {
   margin-bottom: 20px;
 }
 
+.result-container {
+  text-align: center;
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
 label {
   flex: 0 0 100px;
   font-size: 1rem;
@@ -54,6 +62,7 @@ input[type="text"], input[type="password"] {
 
 .submit-container {
   text-align: center;
+  padding-bottom: 20px;
 }
 
 input[type="submit"] {
@@ -64,6 +73,25 @@ input[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: not-allowed;
+}
+
+.change-password-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(229, 229, 229);
+  color: black;
 }
 
 input[type="submit"]:enabled {
