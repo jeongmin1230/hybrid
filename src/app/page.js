@@ -28,6 +28,7 @@ export default function LoginPage() {
             if (users.length > 0) {
               const user = users[0];
               localStorage.setItem('user', JSON.stringify({ name: user.name }));
+              localStorage.setItem('type', JSON.stringify({ type: user.type }));
               router.push(`/main`);
               router.refresh();
             } else {
@@ -69,9 +70,9 @@ export default function LoginPage() {
             />
           </div>
           <p className='link-container'>
-            <Link href='/login_function/signup'>회원가입</Link>
             <Link href='/login_function/findid'>아이디 찾기</Link>
-            <Link href='/login_function/findpassword'>비밀번호 찾기</Link>
+            <Link href='/login_function/findpassword'>비밀번호 변경</Link>
+            <Link href='/login_function/signup'>회원가입</Link>
           </p>
         </fieldset>
       </form>

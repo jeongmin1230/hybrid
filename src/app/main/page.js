@@ -12,6 +12,7 @@ export default function MainPage() {
   const moveTo = (route) => {
     router.push(route);
   }
+  const type = JSON.parse(localStorage.getItem('type'))?.type || '누구세요?'
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API}notice`)
@@ -27,7 +28,9 @@ export default function MainPage() {
     <div>
     <UserInfo />
     <br/>
-    <button onClick={() => moveTo('../notice_registration')}>공지사항 작성</button>
+    {type === "관리자" && (
+      <button onClick={() => moveTo('../notice_registration')}>공지사항 작성</button>
+    )}
     {noticeList.length > 0 ? (
         <ul>
           {noticeList.map((notice, _) => (
